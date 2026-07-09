@@ -1,0 +1,45 @@
+HL monthly total tick density ANOVA analysis
+============================================
+
+Data source: data_HL.csv
+Outcome: tick_density_total (ticks per 100 m)
+Months compared: April, May, June, July, August, September, October, November
+Number of observations: 406
+
+Workflow
+--------
+Each original sampling record was treated as one observation. Monthly differences in total tick density were first assessed using one-way ANOVA. Normality was checked using the Shapiro-Wilk test applied to ANOVA residuals, and homogeneity of variances was checked using a median-centered Levene test. Tukey's HSD test was used for post-hoc multiple comparisons. Because raw tick density was right-skewed and the Shapiro-Wilk test rejected normality, a log-transformed ANOVA was additionally performed as a sensitivity analysis. Welch's ANOVA was also calculated for transparency.
+
+Descriptive result
+------------------
+The highest mean total tick density was observed in September (mean = 5.1650, SE = 1.0810 ticks per 100 m).
+
+Assumption checks
+-----------------
+Raw-density ANOVA residual normality: Shapiro-Wilk W = 0.4950, P = <0.001.
+Raw-density homogeneity of variances: Levene F(7, 398) = 0.9812, P = 0.4444.
+Log-density ANOVA residual normality: Shapiro-Wilk W = 0.9882, P = 0.0022.
+Log-density homogeneity of variances: Levene F(7, 398) = 1.1468, P = 0.3328.
+
+Overall tests
+-------------
+Raw-density one-way ANOVA: F(7, 398) = 1.0650, P = 0.3853.
+Raw-density Welch ANOVA: F(7.0000, 16.9819) = 2.9748, P = 0.0314.
+Log-density one-way ANOVA: F(7, 398) = 2.4641, P = 0.0175.
+
+Interpretation
+--------------
+Using the pre-specified raw-density one-way ANOVA, no statistically significant difference in total tick density was detected among months (P = 0.3853).
+The log-transformed sensitivity analysis also indicated significant monthly differences (P = 0.0175).
+Number of significant Tukey HSD pairwise comparisons on raw density: 0.
+Number of significant Tukey HSD pairwise comparisons on log density: 2.
+
+Suggested Methods text
+----------------------
+Differences in monthly total tick density were assessed using one-way analysis of variance (ANOVA), with each sampling record treated as an independent observation. Prior to ANOVA, normality was evaluated using the Shapiro-Wilk test applied to model residuals, and homogeneity of variances was assessed using a median-centered Levene test. Tukey's honestly significant difference (HSD) test was used for post-hoc multiple comparisons. Because the raw-density residuals deviated from normality, a log-transformed ANOVA was additionally conducted as a sensitivity analysis, and Welch's ANOVA was calculated to assess robustness to unequal variances.
+
+Suggested Results text
+----------------------
+For raw total tick density, the Shapiro-Wilk test indicated deviation from normality (W = 0.4950, P = <0.001), whereas Levene's test did not indicate heterogeneity of variances [F(7, 398) = 0.9812, P = 0.4444]. One-way ANOVA did not detect a significant difference in monthly total tick density [F(7, 398) = 1.0650, P = 0.3853]. The highest mean density occurred in September (mean = 5.1650 ticks per 100 m).
+
+Full numerical outputs are provided in HL_anova.csv.
